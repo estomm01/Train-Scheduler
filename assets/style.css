@@ -1,16 +1,23 @@
 
 body {
-  background-image: url(./assets/redding.png);
+  background-image: url("../assets/train station.jpg");
+   background-repeat: no-repeat;
+    background-size: cover;
+
+
 }
 
 #heading {
   font-family: Times;
   font-weight: bold;
+  color: blue;
+
 }
 
 #subHeading {
   font-family: Times;
   font-style: italic;
+  color: blue;
 }
 
 .panel-title {
@@ -19,4 +26,33 @@ body {
 
 th {
   font-weight: bold;
+}
+
+#submit {
+ font-size: .75em;
+ background: #E5A073
+}
+
+.form-control form-field {
+  color:blue;
+}
+
+.panel-body{
+  font-size: 1.5em;
+  color: black;
+  opacity: 0.8;
+  background-color: white;
+  margin-right: 40px;
+  width:150%
+}
+
+.panel-title {
+  background-color: white;
+  opacity: .8;
+
+}
+
+.jumbotron {
+  padding: 1rem 1rem;
+
 }

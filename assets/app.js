@@ -89,6 +89,8 @@ $("#submit").on("click", function (event) {
 database.ref().on("child_added", function (childSnapshot) {
   console.log(childSnapshot.val().trainName);
   console.log(childSnapshot.val().destination);
+
+
   //   console.log(childSnapshot.val().startTime);
 
   // First Time (pushed back 1 year to make sure it comes before current time)
@@ -111,7 +113,7 @@ database.ref().on("child_added", function (childSnapshot) {
   newrow.append($("<td class= 'text-center'>" + moment(nextTrain).format("HH:mm") + "</td>"));
   newrow.append($("<td class= 'text-center'>" + minToArrival + "</td>"));
   //newrow.append($("<td class='text-center'><button class='arrival btn btn-danger btn-xs' data-key='" + key + "'>X</button></td>"));
-  newrow.append($("<td class= 'text-center'><button class= 'btn btn-danger arrival'> Delete </td>"));
+  newrow.append($("<td class= 'text-center'><button class= 'btn btn-danger arrival' data-key='" + childSnapshot.key + "'> Delete </td>"));
 
 
 
@@ -121,8 +123,11 @@ database.ref().on("child_added", function (childSnapshot) {
 
 //need to create some type of attr for the button to remove from the dom
 $(document).on("click", ".arrival", function() {
-   keyref =$(this).attr()
-   database.ref().child(something).remove();
+   var tmp = $(this).attr('data-key');
+   console.log(tmp);
+   database.ref().child(tmp).remove();
+  $(this).parent().parent().remove();
+
 
 });
 
